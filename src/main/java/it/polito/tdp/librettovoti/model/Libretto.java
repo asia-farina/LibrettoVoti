@@ -21,5 +21,25 @@ public class Libretto {
 		}
 		return s;
 	}
+	
+	public List <Voto> listaEsamiVotoUguale (int punteggio) {
+		List <Voto> votiUguali=new LinkedList <Voto>();
+		for (Voto v:this.voti)
+		{
+			if (v.getVoto()==punteggio)
+			votiUguali.add(v);
+		}
+		return votiUguali;
+	}
+	
+	public Libretto librettoEsamiVotoUguale (int punteggio) {
+		Libretto risultato=new Libretto();
+		for (Voto v:this.voti)
+		{
+			if (v.getVoto()==punteggio)
+			   risultato.setVoti(v);
+		}
+		return risultato;
+	}
 
 }

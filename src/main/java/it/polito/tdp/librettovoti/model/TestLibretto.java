@@ -10,6 +10,8 @@ public class TestLibretto {
 	    libretto.setVoti(voto1);
 	    libretto.setVoti(new Voto ("Fisica I", 28, LocalDate.of(2019,  7, 15)));
 	    libretto.setVoti(new Voto ("Informatica", 24, LocalDate.of(2019, 9, 3)));
+	    libretto.setVoti(new Voto ("Chimica", 25, LocalDate.of(2019, 2, 20)));
 	    System.out.println(libretto);
+	    System.out.println(libretto.librettoEsamiVotoUguale(25));
 	}
 }
