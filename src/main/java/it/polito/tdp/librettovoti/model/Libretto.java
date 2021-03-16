@@ -9,8 +9,16 @@ public class Libretto {
 		this.voti=new ArrayList <Voto>();
 	}
 	
-	public void setVoti (Voto v) {
+	public boolean setVoti (Voto v) {
+		for (Voto vv:this.voti)
+		{
+			if (vv.getNome().toLowerCase().equals(v.getNome().toLowerCase()) && vv.getVoto()==v.getVoto())
+				return false;
+		}
 		this.voti.add(v);
+		ComparatorVoti c=new ComparatorVoti ();
+		Collections.sort(voti, c);
+		return true;
 	}
 	
 	public String toString() {
@@ -40,6 +48,15 @@ public class Libretto {
 			   risultato.setVoti(v);
 		}
 		return risultato;
+	}
+	
+	public Voto ricercaCorso (String nomeCorso) {
+		for (Voto v:this.voti)
+		{
+			if (v.getNome().equals(nomeCorso))
+				return v;
+		}
+		return null;
 	}
 
 }
